@@ -91,16 +91,16 @@ public class ScoreManager : MonoBehaviour
 {
     gameObject.SetActive(false);
 
-    // Instantiate the player fish
+    
     currentFish = Instantiate(playerFishPrefabs[evolveCount], transform.position, Quaternion.identity);
     FishMovement fishMovement = currentFish.AddComponent<FishMovement>();
 
-    // Find all enemy fish with the "EnemyFish" tag
+    
     GameObject[] enemyFishArray = GameObject.FindGameObjectsWithTag("EnemyFish");
 
     foreach (GameObject enemyFish in enemyFishArray)
     {
-        // Change the tag of enemy fish to "EatenFish"
+        
         enemyFish.tag = "EatenFish";
     }
 }
@@ -109,13 +109,13 @@ public class ScoreManager : MonoBehaviour
     void LoadNextLevel()
     {
         
-        SceneManager.LoadSceneAsync(nextScene); // Load the next level scene.
+        SceneManager.LoadSceneAsync(nextScene); 
     }
 
     public void GameOver()
     {
         isGameOver = true;
-        // Update your UI or perform any other game over actions
+       
         if (gameOverText != null)
         {
             gameOverText.text = "Game Over";
